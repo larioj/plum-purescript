@@ -9,12 +9,19 @@
 Using your favorite vim package manager.
 (I use [Plug](https://github.com/junegunn/vim-plug))
 
-## Actions
-
-### Goto
+## plum#purescript#Goto()
 This matches *everything* in a purescript file and calls `:Pgoto`.
 You should put this last in the action list.
 
+## Recomemded Usage
+At end of list since this will match anything in a purescript file
+
 ```viml
-call Plum_InsertAction(-1, PlumPurescript_Goto())
+let g:plum_actions = [
+      \ plum#fso#Directory(),
+      \ plum#fso#File(),
+      \ plum#term#SmartTerminal(),
+      \ plum#vim#Execute(),
+      \ plum#purescript#Goto(),
+      \ ]
 ```
